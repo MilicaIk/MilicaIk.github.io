@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milica Ikonić Nešić</title>
+<meta name="description" content="Milica Ikonić Nešić — Teaching Assistant, Faculty of Philology, University of Belgrade. Research in natural language processing, digital humanities, and artificial intelligence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f3;
+    --bg-card: #ffffff;
+    --ink: #1a1a1a;
+    --ink-muted: #5a5a5a;
+    --ink-light: #8a8a8a;
+    --accent: #7a2e2e;
+    --accent-soft: #b08080;
+    --line: #e8e3d8;
+    --line-strong: #c9c0ac;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Decorative top bar */
+  .top-rule {
+    height: 4px;
+    background: var(--accent);
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .photo-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 0 0 1px var(--line-strong), 0 8px 24px rgba(0,0,0,0.08);
+    background: var(--line);
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0ebe0, #d9d0bb);
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .affiliation {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .contact-row {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .contact-row a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+  }
+
+  .contact-row a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ============ NAV ============ */
+  nav.main-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 248, 243, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 1rem 0;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-inner a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-inner a:hover { color: var(--accent); }
+
+  /* ============ ABOUT / INTERESTS ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .interests-box {
+    background: var(--bg-card);
+    border-top: 3px solid var(--accent);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 1.75rem;
+  }
+
+  .interests-box h3 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .interest-tag {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    padding: 0.35rem 0.85rem;
+    margin: 0.25rem 0.3rem 0.25rem 0;
+    background: rgba(122, 46, 46, 0.06);
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  .interest-tag:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+
+  /* ============ ABOUT / EDUCATION / EXPERIENCE ============ */
+  .entry {
+    margin-bottom: 1.75rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--line);
+    transition: border-color 0.2s;
+  }
+
+  .entry:hover { border-left-color: var(--accent-soft); }
+
+  .entry-title {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-meta {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .entry-body {
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+  }
+
+  .entry-body strong { color: var(--ink); }
+
+  /* Courses */
+  .courses-block {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .courses-block h4 {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 0.6rem 0 0.3rem;
+  }
+
+  /* ============ PROJECTS ============ */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .project-meta {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent-soft);
+  }
+
+  .project-card a:hover { border-color: var(--accent); }
+
+  /* ============ PUBLICATIONS ============ */
+  .year-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .year-heading {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--line-strong);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .year-heading .count {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .pub {
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border-left: 3px solid var(--line-strong);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .pub:hover {
+    border-left-color: var(--accent);
+  }
+
+  .pub-authors {
+    color: var(--ink-muted);
+  }
+
+  .pub-authors .me {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .pub-title {
+    color: var(--ink);
+    font-style: italic;
+    margin: 0.2rem 0;
+  }
+
+  .pub-venue {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+
+  .pub-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: var(--line);
+    color: var(--ink-muted);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.4rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  .pub-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.35rem 0.9rem;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  .pub-link:hover {
+    background: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .pub-link::after {
+    content: " →";
+    font-weight: 400;
+  }
+
+  /* Category filter intro */
+  .pub-intro {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    background: rgba(122, 46, 46, 0.04);
+    border-left: 3px solid var(--accent-soft);
+  }
+
+  /* ============ MEMBERSHIPS ============ */
+  .memberships ul {
+    list-style: none;
+  }
+
+  .memberships li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--line);
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+  }
+
+  .memberships li:last-child { border-bottom: none; }
+
+  .memberships strong { color: var(--ink); }
+
+  .memberships h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.75rem;
+    color: var(--accent);
+  }
+
+  .memberships h3:first-child { margin-top: 0; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  footer .container {
+    color: rgba(250, 248, 243, 0.7);
+  }
+
+  footer strong { color: var(--bg); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 720px) {
+    .header-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .photo-frame { margin: 0 auto; }
+    .contact-row { justify-content: center; }
+    .nav-inner { gap: 1.25rem; font-size: 0.75rem; }
+    section { padding: 2.5rem 0; }
+    .section-title { font-size: 1.75rem; }
+    .year-heading { font-size: 1.5rem; }
+    header { padding: 2.5rem 0 2rem; }
+  }
+
+  /* Fade-in on load */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.6s ease forwards;
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<!-- ============== HEADER ============== -->
+<header>
+  <div class="container">
+    <div class="header-grid">
+      <div class="photo-frame fade-in">
+        <!-- Zameni src svojom slikom: photo.jpg u istom folderu -->
+        <img src="photo.jpg" alt="Milica Ikonić Nešić" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'photo-placeholder\'>M</div>';">
+      </div>
+      <div class="fade-in" style="animation-delay: 0.1s;">
+        <h1 class="name">Milica Ikonić Nešić</h1>
+        <div class="title-line">Teaching Assistant</div>
+        <div class="affiliation">
+          Department of Library and Information Science<br>
+          Faculty of Philology, University of Belgrade
+        </div>
+        <div class="contact-row">
+          <a href="https://informatika.fil.bg.ac.rs/milica/index.html" target="_blank" rel="noopener">Faculty page</a>
+          <a href="https://scholar.google.com/citations?hl=sr&amp;user=u10Uig0AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="#publikacije">Publications</a>
+          <a href="#projekti">Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============== NAV ============== -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#obrazovanje">Education</a>
+    <a href="#iskustvo">Experience</a>
+    <a href="#projekti">Projects</a>
+    <a href="#publikacije">Publications</a>
+    <a href="#angazmani">Service</a>
+  </div>
+</nav>
+
+<!-- ============== ABOUT ============== -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">— About</div>
+    <h2 class="section-title">Biography</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          <strong>Milica Ikonić Nešić</strong>, MSc, works as a teaching assistant at the Department of Library and Information Science, Faculty of Philology, University of Belgrade.
+        </p>
+        <p>
+          She completed her bachelor's and master's studies in mathematics, with a major in <em>Theoretical Mathematics and Applications</em>, at the Faculty of Mathematics, University of Belgrade. She is currently in the final stage of her PhD studies in <em>Intelligent Systems</em> at the Multidisciplinary Doctoral Studies, University of Belgrade.
+        </p>
+        <p>
+          Her research focuses on language technologies for the Serbian language, primarily semantic analysis of literary texts and the application of language models (LMs) to works of Serbian literature.
+        </p>
+      </div>
+
+      <aside class="interests-box">
+        <h3>Research Interests</h3>
+        <span class="interest-tag">Mathematics</span>
+        <span class="interest-tag">Machine Learning</span>
+        <span class="interest-tag">Semantic Web</span>
+        <span class="interest-tag">NER</span>
+        <span class="interest-tag">NEL</span>
+        <span class="interest-tag">LLM</span>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== EDUCATION ============== -->
+<section id="obrazovanje">
+  <div class="container">
+    <div class="section-label">— Education</div>
+    <h2 class="section-title">Academic background</h2>
+
+    <div class="entry">
+      <div class="entry-title">PhD Studies — Intelligent Systems</div>
+      <div class="entry-meta">Multidisciplinary Doctoral Studies, University of Belgrade · enrolled 2020.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">MSc in Mathematics</div>
+      <div class="entry-meta">Faculty of Mathematics, University of Belgrade</div>
+      <div class="entry-body">
+        Master's thesis: <em>"Martingale H<sup>p</sup> Spaces"</em>, supervisor Prof. Dr. Dragoljub Kečkić.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">BSc in Mathematics</div>
+      <div class="entry-meta">Faculty of Mathematics, University of Belgrade — Theoretical Mathematics and Applications</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Mathematical Grammar School, Belgrade</div>
+      <div class="entry-meta">Secondary education</div>
+      <div class="entry-body">
+        Recipient of the Vuk Karadžić Diploma for outstanding achievement in primary school.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== EXPERIENCE ============== -->
+<section id="iskustvo">
+  <div class="container">
+    <div class="section-label">— Professional experience</div>
+    <h2 class="section-title">Teaching and research</h2>
+
+    <div class="entry">
+      <div class="entry-title">Teaching Assistant</div>
+      <div class="entry-meta">February 2021 — present · Faculty of Philology, University of Belgrade</div>
+      <div class="entry-body">
+        Department of Library and Information Science.
+
+        <div class="courses-block">
+          <h4>Undergraduate courses</h4>
+          Informatics Practicum 2, 3, 4 · Digital Text 1 · Information Structures 1, 2 · Language Technologies 1, 2 · Multimedia Documents · Information Retrieval.
+
+          <h4>Master's courses</h4>
+          Advanced Methods in Information Retrieval · Advanced Language Technologies · Digital Humanities and Libraries — Resources and Tools · Semantic Web Technologies.
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Teaching Associate</div>
+      <div class="entry-meta">2018 — 2020 · Faculty of Mathematics, University of Belgrade</div>
+      <div class="entry-body">
+        <em>Analysis 1</em> (Department of Analysis), <em>Geometry 2</em> (Department of Geometry).
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROJECTS ============== -->
+<section id="projekti">
+  <div class="container">
+    <div class="section-label">— Research projects</div>
+    <h2 class="section-title">Scientific research projects</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-title">TESLA</div>
+        <div class="project-meta">National project · Science Fund of the Republic of Serbia · from May 2024</div>
+        <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0.75rem;">
+          Text Embeddings — Serbian Language Applications (#7276).
+        </p>
+        <a href="https://tesla.rgf.bg.ac.rs/" target="_blank" rel="noopener">tesla.rgf.bg.ac.rs →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">COST Action CA16204</div>
+        <div class="project-meta">2021 — 2024</div>
+        <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0.75rem;">
+          Distant Reading for European Literary History.
+        </p>
+        <a href="https://www.distant-reading.net/" target="_blank" rel="noopener">distant-reading.net →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">It-Sr-NER</div>
+        <div class="project-meta">June — September 2022</div>
+        <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0.75rem;">
+          CLARIN Compatible NER and Geoparsing Web Services for Parallel Texts (Italian and Serbian).
+        </p>
+        <a href="https://github.com/jerteh/It-Sr-NER" target="_blank" rel="noopener">github.com/jerteh/It-Sr-NER →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">COST Action CA23147</div>
+        <div class="project-meta">from 2025</div>
+        <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 0.75rem;">
+          Global Network on Large-Scale, Cross-domain and Multilingual Open Knowledge Graphs.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== PUBLIKACIJE ============== -->
+<section id="publikacije">
+  <div class="container">
+    <div class="section-label">— Bibliography</div>
+    <h2 class="section-title">Publications</h2>
+
+    <!-- ============== 2026 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2026 <span class="count">5 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., Kitanović, O., Stanković, R., &amp; Utvić, M.</div>
+        <div class="pub-title">CNN-based Named Entity Linking: Serbian Use Case</div>
+        <div class="pub-venue">Poznan Studies in Contemporary Linguistics (PSICL) <span class="pub-tag">M22</span> <span class="pub-tag">in press</span></div>
+        <a class="pub-link" href="https://doi.org/10.1515/psicl-2025-0064" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Vučenović, T., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Encoding, Linking, Retrieving: A Methodological Framework for Knowledge-Enriched Interview Corpora</div>
+        <div class="pub-venue">Computer Science and Information Systems <span class="pub-tag">M22</span> <span class="pub-tag">in press</span></div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Vučenović, T., Rujević, B., <span class="me">Ikonić Nešić, M.</span>, &amp; Škorić, M.</div>
+        <div class="pub-title">Integrating TEI, NER/NEL, Textometry, and Linked Data for a Semantically Enriched Interview Corpus</div>
+        <div class="pub-venue">Proceedings of the 15th Language Resources and Evaluation Conference (LREC 2026) <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://lrec2026.info/list-of-accepted-papers/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Petalinkar, S., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">From Names to Places: Serbian Entity Linking Through the Lens of GIS</div>
+        <div class="pub-venue">Proceedings of the 1st ReLDI Conference on Language Science and Technology, 25–26 September 2025 <span class="pub-tag">M34</span></div>
+        <a class="pub-link" href="https://doi.org/10.5281/zenodo.18488312" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Analysis of family relationships of characters in the srpELTeC corpus based on semantic web techniques and textometry</div>
+        <div class="pub-venue">Infotheca — Journal for Digital Humanities, 25(1–2), 7–40 <span class="pub-tag">M53</span></div>
+        <a class="pub-link" href="https://doi.org/10.18485/infotheca.2025.25.1_2.1" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+    <!-- ============== 2025 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2025 <span class="count">7 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors">Petalinkar, S., Stanković, R. M., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Comparative Analysis of Methods for Creating a Sentiment Lexicon of the Serbian WordNet</div>
+        <div class="pub-venue">The Electronic Library, 43(4), 547–577 <span class="pub-tag">M22</span></div>
+        <a class="pub-link" href="https://doi.org/10.1108/EL-08-2024-0253" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., Stanković, R., &amp; Mitkov, R.</div>
+        <div class="pub-title">From zero to hero – Serbian NER from rules to LLMs</div>
+        <div class="pub-venue">Proceedings of the First Workshop on Comparative Performance Evaluation: From Rules to Language Models (R2LM 2025) @ RANLP 2025, pp. 87–96 <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2025.r2lm-1.10/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Janković, N., Rađenović, J., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">From LLM generation to knowledge representation: Creating and structuring the Gemini Knowledge-sr QA dataset for Serbian</div>
+        <div class="pub-venue">The 1st GOBLIN Workshop on Knowledge Graph Technologies, Leipzig, Germany <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://dr.rgf.bg.ac.rs/files/original/6703fca99da6bf724e75716902d3bcb3ee53f2c2.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Dinić Marinković, M., <span class="me">Ikonić Nešić, M.</span>, &amp; Stanković, R.</div>
+        <div class="pub-title">Application of Language Technologies in Extracting Multiword Lexical Units from Textbooks (orig. Primena jezičkih tehnologija u izdvajanju višečlanih leksičkih jedinica iz teksta udžbenika)</div>
+        <div class="pub-venue">VIII International Congress of Applied Linguistics Today, Belgrade, 23–25 May 2025, 54–55 <span class="pub-tag">M34</span></div>
+        <a class="pub-link" href="https://alt8.fil.bg.ac.rs/assets/ALT8%20book%20of%20abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Krstev, C., Stanković, R., Marković, A., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Progress in SR-ELEXIS semantic annotation: Focusing on multiword expressions, named entities, and sense repository</div>
+        <div class="pub-venue">UniDive 3rd General Meeting, Budapest, 29–30 January 2025 <span class="pub-tag">M34</span></div>
+        <a class="pub-link" href="https://doi.org/10.5281/zenodo.14845204" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Vučenović, T., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">From unstructured interviews to queryable knowledge: An AI pipeline for the „Digitalne Ikone" corpus using TEI, NER, NEL, and RAG</div>
+        <div class="pub-venue">Artificial Intelligence Conference, Belgrade, 9–10 October 2025, 151–152 <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://www.mi.sanu.ac.rs/~ai_conf/2025/AI_Conference_Book_of_Abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., &amp; Stanković, R.</div>
+        <div class="pub-title">Towards linguistic completeness in knowledge graphs: Generating Serbian inflections with language models</div>
+        <div class="pub-venue">Artificial Intelligence Conference, Belgrade, 9–10 October 2025, 129–130 <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://www.mi.sanu.ac.rs/~ai_conf/2025/AI_Conference_Book_of_Abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+    <!-- ============== 2024 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2024 <span class="count">10 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., Škorić, M., &amp; Stanković, R.</div>
+        <div class="pub-title">BERT downstream task analysis: Named entity recognition in Serbian</div>
+        <div class="pub-venue">Conference on Information Technology and its Applications, pp. 333–347, Springer Nature Switzerland <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://doi.org/10.1007/978-3-031-71419-1_29" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., Škorić, M., Stanković, R., &amp; Rujević, B.</div>
+        <div class="pub-title">Advancing sentiment analysis in Serbian literature: A zero and few-shot learning approach using the Mistral model</div>
+        <div class="pub-venue">Proceedings of the Sixth International Conference on Computational Linguistics in Bulgaria (CLIB 2024), pp. 58–70 <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2024.clib-1.5/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., Stanković, R., Utvić, M., &amp; Kitanović, O.</div>
+        <div class="pub-title">SrpCNNeL: Serbian model for named entity linking</div>
+        <div class="pub-venue">Proceedings of the 19th Conference on Computer Science and Intelligence Systems (FedCSIS), pp. 465–473, IEEE <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://doi.org/10.15439/2024F8827" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Mihajlov, T., <span class="me">Ikonić Nešić, M.</span>, Stanković, R., &amp; Kitanović, O.</div>
+        <div class="pub-title">Topic modeling of the srpELTeC corpus: A comparison of NMF, LDA, and BERTopic</div>
+        <div class="pub-venue">Proceedings of the 19th Conference on Computer Science and Intelligence Systems (FedCSIS), pp. 649–653, IEEE <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://doi.org/10.15439/2024F1593" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., <span class="me">Ikonić Nešić, M.</span>, Perišić, O., Škorić, M., &amp; Kitanović, O.</div>
+        <div class="pub-title">Towards semantic interoperability: Parallel corpora as linked data incorporating named entity linking</div>
+        <div class="pub-venue">The 9th Workshop on Linked Data in Linguistics (LDL-2024) @ LREC-COLING-2024, pp. 115–125, ELRA <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2024.ldl-1.15/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Chiarcos, C., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Leveraging Linked Data, NIF, and CONLL-U for Enhanced Annotation in Sentence Aligned Parallel Corpora</div>
+        <div class="pub-venue">UniDive 2nd General Meeting, University of Naples L'Orientale, Italy <span class="pub-tag">M34</span></div>
+        <a class="pub-link" href="https://doi.org/10.5281/zenodo.11208944" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Petalinkar, S., <span class="me">Ikonić Nešić, M.</span>, Stanković, R., &amp; Škorić, M.</div>
+        <div class="pub-title">Comparison of Zero and Few-Shot Learning Approaches Using LLMs for Sentiment Analysis in Serbian Literature</div>
+        <div class="pub-venue">Book of Abstracts, Artificial Intelligence Conference, Belgrade, pp. 55–56, SASA <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://www.mi.sanu.ac.rs/~ai_conf/previous_editions/2024/AI_Conference_Book_of_Abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Petalinkar, S., &amp; Stanković, R.</div>
+        <div class="pub-title">Development and Evaluation of Named Entity Linking Models for Serbian Language with Wikidata Integration</div>
+        <div class="pub-venue">Book of Abstracts, Artificial Intelligence Conference, Belgrade, pp. 47–48, SASA <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://www.mi.sanu.ac.rs/~ai_conf/previous_editions/2024/AI_Conference_Book_of_Abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, &amp; Utvić, M.</div>
+        <div class="pub-title">Overview of the Tesla-Ner-Nel-Gold Dataset: Showcase on Serbian-English Parallel Corpus</div>
+        <div class="pub-venue">JuDig 2024, Belgrade, p. 57 <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://judig.jerteh.rs/2024/judig-book-of-abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Milinković, M., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Named Entities in the Digital Corpus of Spatial Plans/Planning</div>
+        <div class="pub-venue">JuDig 2024, Belgrade, pp. 33–34 <span class="pub-tag">M64</span></div>
+        <a class="pub-link" href="https://judig.jerteh.rs/2024/judig-book-of-abstracts.pdf" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+    <!-- ============== 2023 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2023 <span class="count">3 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors">Krstev, C., Stanković, R., Šandrih Todorović, B., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">New Technologies for Reviving Old Texts (orig. Nove tehnologije za oživljavanje starih tekstova)</div>
+        <div class="pub-venue">Proceedings of the International Scientific Conference "Digital Humanities and Slavic Cultural Heritage II", Belgrade, 28–29 June 2021. Belgrade: Association of Slavic Societies of Serbia <span class="pub-tag">M14</span></div>
+        <a class="pub-link" href="https://enauka.gov.rs/handle/123456789/854220" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Perišić, O., Stanković, R., <span class="me">Ikonić Nešić, M.</span>, &amp; Škorić, M.</div>
+        <div class="pub-title">It-Sr-NER: CLARIN compatible NER and geoparsing web services for Italian and Serbian parallel text</div>
+        <div class="pub-venue">Selected Papers from the CLARIN Annual Conference 2022, pp. 99–110, Linköping University Electronic Press <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://doi.org/10.3384/ecp198010" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Perišić, O., Stanković, R., <span class="me">Ikonić Nešić, M.</span>, &amp; Škorić, M.</div>
+        <div class="pub-title">It-Sr-NER: Web Services for Recognizing and Linking Named Entities in Text and Displaying Them on a Web Map</div>
+        <div class="pub-venue">Infotheca — Journal for Digital Humanities, 23(1), 61–77 <span class="pub-tag">M53</span></div>
+        <a class="pub-link" href="https://doi.org/10.18485/infotheca.2023.23.1.3" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+    <!-- ============== 2022 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2022 <span class="count">4 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors">Škorić, M., Stanković, R., <span class="me">Ikonić Nešić, M.</span>, Byszuk, J., &amp; Eder, M.</div>
+        <div class="pub-title">Parallel Stylometric Document Embeddings with Deep Learning Based Language Models in Literary Authorship Attribution</div>
+        <div class="pub-venue">Mathematics, 10(5), 838 <span class="pub-tag">M21a</span></div>
+        <a class="pub-link" href="https://doi.org/10.3390/math10050838" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Stanković, R., Schöch, C., &amp; Škorić, M.</div>
+        <div class="pub-title">From ELTeC text collection metadata and named entities to Linked-Data (and back)</div>
+        <div class="pub-venue">Proceedings of the 8th Workshop on Linked Data in Linguistics (LDL-2022) @ LREC 2022, pp. 7–16 <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2022.ldl-1.2/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Košprdić, M., <span class="me">Ikonić Nešić, M.</span>, &amp; Radović, T.</div>
+        <div class="pub-title">Sentiment analysis of Serbian old novels</div>
+        <div class="pub-venue">Proceedings of the 2nd Workshop on Sentiment Analysis and Linguistic Linked Data (SALLD-2), pp. 31–38 <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2022.salld-1.6/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors">Stanković, R., Krstev, C., Šandrih Todorović, B., Vitas, D., Škorić, M., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Distant reading in digital humanities: Case study on the Serbian part of the ELTeC collection</div>
+        <div class="pub-venue">Proceedings of the Thirteenth Language Resources and Evaluation Conference (LREC 2022), pp. 3337–3345, ELRA <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2022.lrec-1.356/" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+    <!-- ============== 2021 ============== -->
+    <div class="year-group">
+      <h3 class="year-heading">2021 <span class="count">2 papers</span></h3>
+
+      <div class="pub">
+        <div class="pub-authors">Šandrih Todorović, B., Krstev, C., Stanković, R., &amp; <span class="me">Ikonić Nešić, M.</span></div>
+        <div class="pub-title">Serbian NER &amp; beyond: The archaic and the modern intertwined</div>
+        <div class="pub-venue">Deep Learning Natural Language Processing Methods and Applications — Proceedings of RANLP 2021, pp. 1252–1260 <span class="pub-tag">M33</span></div>
+        <a class="pub-link" href="https://aclanthology.org/2021.ranlp-1.141/" target="_blank" rel="noopener">LINK</a>
+      </div>
+
+      <div class="pub">
+        <div class="pub-authors"><span class="me">Ikonić Nešić, M.</span>, Stanković, R., &amp; Rujević, B.</div>
+        <div class="pub-title">Serbian ELTeC Sub-Collection in Wikidata</div>
+        <div class="pub-venue">Infotheca — Journal for Digital Humanities, 21(2) <span class="pub-tag">M53</span></div>
+        <a class="pub-link" href="https://doi.org/10.18485/infotheca.2021.21.2.4" target="_blank" rel="noopener">LINK</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== SERVICE / MEMBERSHIPS ============== -->
+<section id="angazmani" class="memberships">
+  <div class="container">
+    <div class="section-label">— Memberships & service</div>
+    <h2 class="section-title">Professional service</h2>
+
+    <h3>Editorial roles</h3>
+    <ul>
+      <li>Editorial Assistant of the <strong>Journal of Natural Language Processing</strong> (Cambridge University Press).</li>
+    </ul>
+
+    <h3>Professional associations</h3>
+    <ul>
+      <li>Member of the <strong>Society for Language Resources and Technologies — JeRTeH</strong> · <a href="https://jerteh.rs" target="_blank" rel="noopener" style="color: var(--accent);">jerteh.rs</a></li>
+    </ul>
+
+    <h3>Organizing committees of international conferences</h3>
+    <ul>
+      <li><strong>RANLP 2021</strong> — Recent Advances in Natural Language Processing, Bulgaria.</li>
+      <li><strong>RANLP 2025</strong> — Recent Advances in Natural Language Processing, Bulgaria.</li>
+      <li><strong>JuDig 2024 and 2026</strong> — South Slavic Languages in the Digital Environment, Faculty of Philology, Belgrade.</li>
+      <li><strong>LaTeLL 2026</strong> — Fez, Morocco.</li>
+    </ul>
+
+    <h3>Teaching at international summer schools</h3>
+    <ul>
+      <li>Teaching assistant at <strong><a href="https://summer-school.gplsi.es/teaching-assistants/" target="_blank" rel="noopener" style="color: var(--accent);">The Paradigm Shift Summer School 2026</a></strong>, organized by the GPLSI research group, University of Alicante (Spain), part of the NLPAICS 2026 conference.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="container">
+    <strong>Milica Ikonić Nešić</strong> · Faculty of Philology, University of Belgrade<br>
+    <span style="font-size: 0.8rem; opacity: 0.7;">© 2026 · Last updated: May 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
